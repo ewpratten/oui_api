@@ -1,4 +1,4 @@
-# OUI-API
+# OUI-API 
 
 OUI-API is a very simple REST api for querying company information off their [Organizationally Unique Identifier](https://en.wikipedia.org/wiki/Organizationally_unique_identifier).
 
