@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "vercel_python_api_template",
+    "name": "oui_api",
     "builds": [
         {
             "src": "static/*",
