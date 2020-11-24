@@ -13,11 +13,11 @@ def parse_oui_table(data: str) -> Generator[OUIVendor, None, None]:
     """
 
     # Split OUI table up by entry
-    raw_entries: List[str] = data.split("\r\n\r\n")
+    raw_entries: List[str] = data.split("\n\n")
 
     # Construct each entry into a vendor object
     for entry in raw_entries[1:]:
-        entry = re.sub(" +", entry.replace("\t"," ").strip()).split("\r\n")
+        entry = re.sub(" +", " ", entry.replace("\t"," ").strip()).split("\n")
         
         # Split out first two lines
         line_1 = entry[0].split(" ")
@@ -27,7 +27,7 @@ def parse_oui_table(data: str) -> Generator[OUIVendor, None, None]:
         oui = line_1[0]
         company_name = line_1[2]
         company_id = line_2[0]
-        address = "\n".join(entry[2:])
+        address = "\n".join(entry[2:]).strip()
 
         # Build vendor obj
         yield OUIVendor(oui, company_id, company_name, address)

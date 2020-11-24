@@ -14,6 +14,3 @@ class OUIVendor(object):
         self.company_id = company_id
         self.organization = organization
         self.address = address
-
-    def __dict__(self) -> dict:
-        return vars(self)
